@@ -1,0 +1,7 @@
+{
+    "postgres-container":"docker run --name postgres-db -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres",
+    "strapi-container":"docker build --build-arg NODE_ENV=production -t tavern-cms:latest -f Dockerfile.prod .",
+    "docker-run-strapi":"docker run --name strapi -p 1337:1337 tavern-cms",
+    "astro-container":" docker build -t tavern-mpa:latest -f Dockerfile.test .",
+    "docker-run-astro":"docker run --name astro -p 3000:3000 tavern-mpa"
+}
