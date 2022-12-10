@@ -2,11 +2,11 @@ export default ({ env }) => ({
   connection: {
     client: 'postgres',
     connection: {
-      host: env('DATABASE_HOST', '172.17.0.2'),
+      host: env('DATABASE_HOST', '172.1.1.23'),
       port: env.int('DATABASE_PORT', 5432),
       database: env('DATABASE_NAME', 'tavern-cms'),
       user: env('DATABASE_USERNAME', 'postgres'),
-      password: env('DATABASE_PASSWORD', 'docker'),
+      password: env('DATABASE_PASSWORD', 'Admin123!'),
       ssl: env.bool('DATABASE_SSL', false),
     },
   },
