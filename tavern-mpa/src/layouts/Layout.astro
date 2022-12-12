@@ -34,6 +34,7 @@ const currentPath = pathname.slice(1); // remove the first "/"
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <script is:inline src="/js/bootstrap.js"></script>
 	</head>
 	<body>
 
@@ -66,21 +67,11 @@ const currentPath = pathname.slice(1); // remove the first "/"
                 </div>
             </nav>
 
-            <div class="container-fluid py-5 bg-dark hero-header mb-5">
-                <div class="container my-5 py-5">
-                    <div class="row align-items-center g-5">
-                        <div class="col-lg-6 text-center text-lg-start">
-                            <h1 class="display-3 text-white animated slideInLeft">Enjoy Our<br>Delicious Meal</h1>
-                            <p class="text-white animated slideInLeft mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <!-- Navbar & Hero End -->
 		<slot />
 		<!-- Footer Start -->
-        <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
                 <div class="row g-5 justify-content-center">
                     <div class="col-lg-3 col-md-6">
