@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "appetizers",
+  "info": {
+    "singularName": "appetizer",
+    "pluralName": "appetizers",
+    "displayName": "Appetizer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Onoma": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Perigrafh": {
+      "type": "text"
+    },
+    "Price": {
+      "type": "decimal"
+    }
+  }
+}

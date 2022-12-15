@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "drinks",
+  "info": {
+    "singularName": "drink",
+    "pluralName": "drinks",
+    "displayName": "Drink"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Price": {
+      "type": "decimal",
+      "required": true
+    },
+    "Onomasia": {
+      "type": "string",
+      "required": true
+    },
+    "Perigrafi": {
+      "type": "text"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "ouzo",
+        "tsipouro",
+        "beers",
+        "retsina",
+        "wine",
+        "beverages"
+      ],
+      "required": true
+    }
+  }
+}
