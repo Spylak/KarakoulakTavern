@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-12-15T16:22:08.157Z"
+    "x-generation-date": "2022-12-16T11:43:40.611Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1477,7 +1477,7 @@
             "required": [
               "Name",
               "Price",
-              "Onomasia",
+              "Onoma",
               "Type"
             ],
             "type": "object",
@@ -1492,7 +1492,7 @@
                 "type": "number",
                 "format": "float"
               },
-              "Onomasia": {
+              "Onoma": {
                 "type": "string"
               },
               "Perigrafi": {
@@ -1532,7 +1532,7 @@
                 "type": "number",
                 "format": "float"
               },
-              "Onomasia": {
+              "Onoma": {
                 "type": "string"
               },
               "Perigrafi": {
@@ -1869,7 +1869,7 @@
                 "type": "number",
                 "format": "float"
               },
-              "Onomasia": {
+              "Onoma": {
                 "type": "string"
               },
               "Perigrafi": {
@@ -2239,7 +2239,7 @@
                 "type": "number",
                 "format": "float"
               },
-              "Onomasia": {
+              "Onoma": {
                 "type": "string"
               },
               "Perigrafi": {
@@ -2576,7 +2576,7 @@
                 "type": "number",
                 "format": "float"
               },
-              "Onomasia": {
+              "Onoma": {
                 "type": "string"
               },
               "Perigrafi": {

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "drink",
     "pluralName": "drinks",
-    "displayName": "Drink"
+    "displayName": "Drink",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -23,7 +24,7 @@
       "type": "decimal",
       "required": true
     },
-    "Onomasia": {
+    "Onoma": {
       "type": "string",
       "required": true
     },

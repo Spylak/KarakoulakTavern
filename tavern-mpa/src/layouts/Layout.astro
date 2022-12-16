@@ -1,8 +1,30 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
+var base = Astro.request.url.split("/");
+var baseUrl = base[0]+"//"+base[2];
+var lang = base[3];
 ---
+<script>
+    var lang = localStorage.getItem("lang");
+    var location = window.location.href;
+    if(!lang){
+        localStorage.setItem("lang","el");
+        lang = "el";
+    }
+    function setNavFlag(){
+        document
+    .getElementById("dropdownMenuButton1").innerHTML = lang === "el" ? "🇬🇷" : "🇬🇧";
+    }
 
+    setNavFlag();
+
+    document.getElementById("dropdownEl")
+    .addEventListener('click',() => {window.location.href=location.replace("/en","/el");localStorage.setItem("lang","el");});
+
+    document.getElementById("dropdownEn")
+    .addEventListener('click',() => {window.location.href=location.replace("/el","/en");localStorage.setItem("lang","en");});
+</script>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -21,20 +43,20 @@ const currentPath = pathname.slice(1); // remove the first "/"
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <script is:inline src="/js/bootstrap.js"></script>
+    <link href="../css/style.css" rel="stylesheet">
+    <script is:inline src="../js/bootstrap.js"></script>
 	</head>
 	<body>
 
@@ -58,12 +80,21 @@ const currentPath = pathname.slice(1); // remove the first "/"
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0 pe-4">
-                        <a href="/" class={currentPath === "" ? "nav-item nav-link active" : "nav-item nav-link"}>Home</a>
-                        <a href="about" class={currentPath === "about" ? "nav-item nav-link active" : "nav-item nav-link"}>About</a>
-                        <a href="service" class={currentPath === "service" ? "nav-item nav-link active" : "nav-item nav-link"}>Service</a>
-                        <a href="menu" class={currentPath === "menu" ? "nav-item nav-link active" : "nav-item nav-link"}>Menu</a>
-                        <a href="contact" class={currentPath === "contact" ? "nav-item nav-link active" : "nav-item nav-link"}>Contact</a>
+                        <a href={baseUrl+"/"+lang+"/"} class={currentPath === lang+"/" || lang ? "nav-item nav-link active" : "nav-item nav-link"}>Home</a>
+                        <a href={baseUrl+"/"+lang+"/about"} class={currentPath === lang+"/about" ? "nav-item nav-link active" : "nav-item nav-link"}>About</a>
+                        <a href={baseUrl+"/"+lang+"/service"} class={currentPath === lang+"/service" ? "nav-item nav-link active" : "nav-item nav-link"}>Service</a>
+                        <a href={baseUrl+"/"+lang+"/menu"} class={currentPath === lang+"/menu" ? "nav-item nav-link active" : "nav-item nav-link"}>Menu</a>
+                        <a href={baseUrl+"/"+lang+"/contact"} class={currentPath === lang+"/contact" ? "nav-item nav-link active" : "nav-item nav-link"}>Contact</a>
                     </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        🇬🇷 
+                    </button>
+                    <ul class="dropdown-menu" style="min-width: 20px !important;"  aria-labelledby="dropdownMenuButton1">
+                      <li><button class="dropdown-item" id="dropdownEl">🇬🇷</button></li>
+                      <li><button class="dropdown-item" id="dropdownEn">🇬🇧</button></li>
+                    </ul>
+                  </div>
                 </div>
             </nav>
 
