@@ -32,8 +32,8 @@ const appetizers = await instance.get("appetizers").then((apiResponse) =>
         <div class="container-xxl py-5">
             <div class="container mt-5">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
-                    <h1 class="mb-5">Our delicious dishes</h1>
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Μενού</h5>
+                    <h1 class="mb-5">Τα λαχταριστά μας πιάτα</h1>
                 </div>
                 <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
                     <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
@@ -41,8 +41,7 @@ const appetizers = await instance.get("appetizers").then((apiResponse) =>
                             <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab-1">
                                 <i class="fa fa-utensils fa-2x text-primary"></i>
                                 <div class="ps-3">
-                                    <small class="text-body">Ορεκτικά</small>
-                                    <h6 class="mt-n1 mb-0">Side dishes</h6>
+                                    <h6 class="mb-0">Ορεκτικά</h6>
                                 </div>
                             </a>
                         </li>
@@ -50,8 +49,7 @@ const appetizers = await instance.get("appetizers").then((apiResponse) =>
                             <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-2">
                                 <i class="fa fa-seedling fa-2x text-primary"></i>
                                 <div class="ps-3">
-                                    <small class="text-body">Σαλάτες</small>
-                                    <h6 class="mt-n1 mb-0">Salads</h6>
+                                    <h6 class="mb-0">Σαλάτες</h6>
                                 </div>
                             </a>
                         </li>
@@ -59,8 +57,7 @@ const appetizers = await instance.get("appetizers").then((apiResponse) =>
                             <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-3">
                                 <i class="fa fa-fire-burner fa-2x text-primary"></i>
                                 <div class="ps-3">
-                                    <small class="text-body">Κρεατικά της Ώρας</small>
-                                    <h6 class="mt-n1 mb-0">Short-order Meats</h6>
+                                    <h6 class="mb-0">Κρεατικά της Ώρας</h6>
                                 </div>
                             </a>
                         </li>
@@ -68,8 +65,7 @@ const appetizers = await instance.get("appetizers").then((apiResponse) =>
                             <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-4">
                                 <i class="fa fa-bowl-food fa-2x text-primary"></i>
                                 <div class="ps-3">
-                                    <small class="text-body">Μακαρονάδες</small>
-                                    <h6 class="mt-n1 mb-0">Spaghetti</h6>
+                                    <h6 class="mb-0">Μακαρονάδες</h6>
                                 </div>
                             </a>
                         </li>
@@ -77,8 +73,7 @@ const appetizers = await instance.get("appetizers").then((apiResponse) =>
                             <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-5">
                                 <i class="fa fa-fish fa-2x text-primary"></i>
                                 <div class="ps-3">
-                                    <small class="text-body">Θαλασσινά</small>
-                                    <h6 class="mt-n1 mb-0">Seafood</h6>
+                                    <h6 class="mb-0">Θαλασσινά</h6>
                                 </div>
                             </a>
                         </li>
@@ -86,8 +81,7 @@ const appetizers = await instance.get("appetizers").then((apiResponse) =>
                             <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-6">
                                 <i class="fa fa-wine-bottle fa-2x text-primary"></i>
                                 <div class="ps-3">
-                                    <small class="text-body">Ποτά</small>
-                                    <h6 class="mt-n1 mb-0">Drinks</h6>
+                                    <h6 class="mb-0">Ποτά</h6>
                                 </div>
                             </a>
                         </li>
@@ -101,10 +95,10 @@ const appetizers = await instance.get("appetizers").then((apiResponse) =>
                                         <img class="flex-shrink-0 img-fluid rounded" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>{appetizer.attributes.Name}</span>
+                                                <span>{appetizer.attributes.Onoma}</span>
                                                 <span class="text-primary">{appetizer.attributes.Price} €</span>
                                             </h5>
-                                            <small class="fst-italic">{appetizer.attributes.Description}</small>
+                                            <small class="fst-italic">{appetizer.attributes.Perigrafi}</small>
                                         </div>
                                     </div>
                                 </div>
@@ -119,10 +113,10 @@ const appetizers = await instance.get("appetizers").then((apiResponse) =>
                                         <img class="flex-shrink-0 img-fluid rounded" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>{salad.attributes.Name}</span>
+                                                <span>{salad.attributes.Onoma}</span>
                                                 <span class="text-primary">{salad.attributes.Price} €</span>
                                             </h5>
-                                            <small class="fst-italic">{salad.attributes.Description}</small>
+                                            <small class="fst-italic">{salad.attributes.Perigrafi}</small>
                                         </div>
                                     </div>
                                 </div>
@@ -137,10 +131,10 @@ const appetizers = await instance.get("appetizers").then((apiResponse) =>
                                         <img class="flex-shrink-0 img-fluid rounded" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>{food.attributes.Name}</span>
+                                                <span>{food.attributes.Onoma}</span>
                                                 <span class="text-primary">{food.attributes.Price} €</span>
                                             </h5>
-                                            <small class="fst-italic">{food.attributes.Description}</small>
+                                            <small class="fst-italic">{food.attributes.Perigrafi}</small>
                                         </div>
                                     </div>
                                 </div>
@@ -155,10 +149,10 @@ const appetizers = await instance.get("appetizers").then((apiResponse) =>
                                         <img class="flex-shrink-0 img-fluid rounded" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>{food.attributes.Name}</span>
+                                                <span>{food.attributes.Onoma}</span>
                                                 <span class="text-primary">{food.attributes.Price} €</span>
                                             </h5>
-                                            <small class="fst-italic">{food.attributes.Description}</small>
+                                            <small class="fst-italic">{food.attributes.Perigrafi}</small>
                                         </div>
                                     </div>
                                 </div>
@@ -173,10 +167,10 @@ const appetizers = await instance.get("appetizers").then((apiResponse) =>
                                         <img class="flex-shrink-0 img-fluid rounded" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>{food.attributes.Name}</span>
+                                                <span>{food.attributes.Onoma}</span>
                                                 <span class="text-primary">{food.attributes.Price} €</span>
                                             </h5>
-                                            <small class="fst-italic">{food.attributes.Description}</small>
+                                            <small class="fst-italic">{food.attributes.Perigrafi}</small>
                                         </div>
                                     </div>
                                 </div>
@@ -191,10 +185,10 @@ const appetizers = await instance.get("appetizers").then((apiResponse) =>
                                         <img class="flex-shrink-0 img-fluid rounded" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>{drink.attributes.Name}</span>
+                                                <span>{drink.attributes.Onoma}</span>
                                                 <span class="text-primary">{drink.attributes.Price} €</span>
                                             </h5>
-                                            <small class="fst-italic">{drink.attributes.Description}</small>
+                                            <small class="fst-italic">{drink.attributes.Perigrafi}</small>
                                         </div>
                                     </div>
                                 </div>

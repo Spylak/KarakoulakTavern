@@ -12,12 +12,12 @@ var lang = base[3];
         localStorage.setItem("lang","el");
         lang = "el";
     }
-    function setNavFlag(){
+    function setLang(){
         document
     .getElementById("dropdownMenuButton1").innerHTML = lang === "el" ? "🇬🇷" : "🇬🇧";
     }
 
-    setNavFlag();
+    setLang();
 
     document.getElementById("dropdownEl")
     .addEventListener('click',() => {window.location.href=location.replace("/en","/el");localStorage.setItem("lang","el");});
@@ -72,7 +72,7 @@ var lang = base[3];
         <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0">
-                    <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Karakoulak Tavern</h1>
+                    <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>{lang === "el" ? "Ταβέρνα Καρακουλάκ" : "Karakoulak Tavern"}</h1>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -80,15 +80,15 @@ var lang = base[3];
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0 pe-4">
-                        <a href={baseUrl+"/"+lang+"/"} class={currentPath === lang+"/" || lang ? "nav-item nav-link active" : "nav-item nav-link"}>Home</a>
-                        <a href={baseUrl+"/"+lang+"/about"} class={currentPath === lang+"/about" ? "nav-item nav-link active" : "nav-item nav-link"}>About</a>
-                        <a href={baseUrl+"/"+lang+"/service"} class={currentPath === lang+"/service" ? "nav-item nav-link active" : "nav-item nav-link"}>Service</a>
-                        <a href={baseUrl+"/"+lang+"/menu"} class={currentPath === lang+"/menu" ? "nav-item nav-link active" : "nav-item nav-link"}>Menu</a>
-                        <a href={baseUrl+"/"+lang+"/contact"} class={currentPath === lang+"/contact" ? "nav-item nav-link active" : "nav-item nav-link"}>Contact</a>
+                        <a href={baseUrl+"/"+lang+"/"} class={currentPath === lang+"/" ? "nav-item nav-link active" : "nav-item nav-link"}>{lang === "el" ? "Αρχικη" : "Home"}</a>
+                        <a href={baseUrl+"/"+lang+"/about"} class={currentPath === lang+"/about" ? "nav-item nav-link active" : "nav-item nav-link"}>{lang === "el" ? "Εμεις" : "About"}</a>
+                        <a href={baseUrl+"/"+lang+"/service"} class={currentPath === lang+"/service" ? "nav-item nav-link active" : "nav-item nav-link"}>{lang === "el" ? "Υπηρεσιες" : "Service"}</a>
+                        <a href={baseUrl+"/"+lang+"/menu"} class={currentPath === lang+"/menu" ? "nav-item nav-link active" : "nav-item nav-link"}>{lang === "el" ? "Μενου" : "Menu"}</a>
+                        <a href={baseUrl+"/"+lang+"/contact"} class={currentPath === lang+"/contact" ? "nav-item nav-link active" : "nav-item nav-link"}>{lang === "el" ? "Επικοινωνια" : "Contact"}</a>
                     </div>
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        🇬🇷 
+                    <button class="btn btn-secondary dropdown-toggle" style="background-color: transparent;border:none" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        {lang === "el" ? "🇬🇷" : "🇬🇧"}
                     </button>
                     <ul class="dropdown-menu" style="min-width: 20px !important;"  aria-labelledby="dropdownMenuButton1">
                       <li><button class="dropdown-item" id="dropdownEl">🇬🇷</button></li>
@@ -106,27 +106,27 @@ var lang = base[3];
             <div class="container py-5">
                 <div class="row g-5 justify-content-center">
                     <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Tavern</h4>
-                        <a class="btn btn-link" href="/about">About Us</a>
-                        <a class="btn btn-link" href="/contact">Contact Us</a>
-                        <a class="btn btn-link" href="/contact">Reservation</a>
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">{lang === "el" ? "Ταβέρνα" : "Tavern"}</h4>
+                        <a class="btn btn-link" href="/about">{lang === "el" ? "Λίγα λόγια για εμάς" : "About Us"}</a>
+                        <a class="btn btn-link" href="/contact">{lang === "el" ? "Επικοινωνία" : "Contact Us"}</a>
+                        <a class="btn btn-link" href="/contact">{lang === "el" ? "Κρατήσεις" : "Reservation"}</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Nea Seleukeia, Igoumenitsa</p>
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">{lang === "el" ? "Επικοινωνία" : "Contact"}</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{lang === "el" ? "Νέα Σελεύκεια, Ηγουμενίτσα" : "Nea Seleukeia, Igoumenitsa"}</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+30 26650 26220</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <!-- <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p> -->
                         <div class="d-flex pt-2">
                             <a href="https://www.instagram.com/taverna_karakoylak" target="_blank" class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
                             <a href="https://www.facebook.com/profile.php?id=100001985443103" target="_blank" class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Opening</h4>
-                        <h5 class="text-light fw-normal">Tuesday - Sunday</h5>
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">{lang === "el" ? "Ανοιχτά" : "Open"}</h4>
+                        <h5 class="text-light fw-normal">{lang === "el" ? "Τρίτη - Κυριακή" : "Tuesday - Sunday"}</h5>
                         <p>12:00 - 01:00</p>
-                        <h5 class="text-light fw-normal">Monday</h5>
-                        <p>Closed.</p>
+                        <h5 class="text-light fw-normal">{lang === "el" ? "Δευτέρα" : "Monday"}</h5>
+                        <p>{lang === "el" ? "Κλειστά" : "Closed."}</p>
                     </div>
                 </div>
             </div>
@@ -138,14 +138,6 @@ var lang = base[3];
 							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
                             Distributed By <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a><br><br>
                             Developed By <a class="border-bottom" href="https://www.karakoulak.com" target="_blank">Karakoulak Spyridon</a>
-                        </div>
-                        <div class="col-md-2 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="">Home</a>
-                                <!-- <a href="">Cookies</a>
-                                <a href="">Help</a>
-                                <a href="">FQAs</a> -->
-                            </div>
                         </div>
                     </div>
                 </div>
