@@ -1,5 +1,6 @@
+
 function isProd(){
-  return false;
+  return process.env.NODE_ENV === "production";
 }
 export default ({ env }) =>{
   if(isProd()){
