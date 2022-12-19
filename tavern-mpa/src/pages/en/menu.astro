@@ -14,7 +14,7 @@ const drinks = await instance.get("drinks").then((apiResponse) =>
     apiResponse.data.data
   );
 
-const foods = await instance.get("foods").then((apiResponse) => 
+const foods = await instance.get("foods", { params: { "pagination[pageSize]" :50}}).then((apiResponse) => 
     apiResponse.data.data
   );
 
