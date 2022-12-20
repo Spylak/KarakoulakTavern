@@ -10,7 +10,7 @@ const instance = axios.create({
   headers: {'Authorization': apiKey , 'Accept': 'application/json'}
 });
 
-const drinks = await instance.get("drinks").then((apiResponse) => 
+const drinks = await instance.get("drinks", { params: { "pagination[pageSize]" :50}}).then((apiResponse) => 
     apiResponse.data.data
   );
 
@@ -107,7 +107,24 @@ const appetizers = await instance.get("appetizers").then((apiResponse) =>
                         </div>
                         <div id="tab-2" class="tab-pane fade show p-0">
                             <div class="row g-4">
-                            {salads.map((salad) =>(
+                            {salads.filter( (i) => { return i.attributes.Type === 'raw'}).map((salad) =>(
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>{salad.attributes.Onoma}</span>
+                                                <span class="text-primary">{salad.attributes.Price} €</span>
+                                            </h5>
+                                            <small class="fst-italic">{salad.attributes.Perigrafi}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}       
+                        </div>
+                        <div class="row g-4" >
+                            <h4 class="text-primary" style="padding: 30px;">Βραστές</h4>
+                            {salads.filter( (i) => { return i.attributes.Type === 'boiled'}).map((salad) =>(
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" alt="" style="width: 80px;">
@@ -179,7 +196,93 @@ const appetizers = await instance.get("appetizers").then((apiResponse) =>
                         </div>
                         <div id="tab-6" class="tab-pane fade show p-0">
                             <div class="row g-4">
-                            {drinks.map((drink) =>(
+                            <h4 class="text-primary" style="padding: 30px;">Κρασί</h4>
+                            {drinks.filter( (i) => { return i.attributes.Type === 'wine'}).map((drink) =>(
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>{drink.attributes.Onoma}</span>
+                                                <span class="text-primary">{drink.attributes.Price} €</span>
+                                            </h5>
+                                            <small class="fst-italic">{drink.attributes.Perigrafi}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}         
+                        </div>
+                        <div class="row g-4">
+                            <h4 class="text-primary" style="padding: 30px;">Μπύρες</h4>
+                            {drinks.filter( (i) => { return i.attributes.Type === 'beers'}).map((drink) =>(
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>{drink.attributes.Onoma}</span>
+                                                <span class="text-primary">{drink.attributes.Price} €</span>
+                                            </h5>
+                                            <small class="fst-italic">{drink.attributes.Perigrafi}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}         
+                        </div>
+                        <div class="row g-4">
+                            <h4 class="text-primary" style="padding: 30px;">Ούζο</h4>
+                            {drinks.filter( (i) => { return i.attributes.Type === 'ouzo'}).map((drink) =>(
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>{drink.attributes.Onoma}</span>
+                                                <span class="text-primary">{drink.attributes.Price} €</span>
+                                            </h5>
+                                            <small class="fst-italic">{drink.attributes.Perigrafi}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}         
+                        </div>
+                        <div class="row g-4">
+                            <h4 class="text-primary" style="padding: 30px;">Τσίπουρο</h4>
+                            {drinks.filter( (i) => { return i.attributes.Type === 'tsipouro'}).map((drink) =>(
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>{drink.attributes.Onoma}</span>
+                                                <span class="text-primary">{drink.attributes.Price} €</span>
+                                            </h5>
+                                            <small class="fst-italic">{drink.attributes.Perigrafi}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}         
+                        </div>
+                        <div class="row g-4">
+                            <h4 class="text-primary" style="padding: 30px;">Ρετσίνες</h4>
+                            {drinks.filter( (i) => { return i.attributes.Type === 'retsina'}).map((drink) =>(
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>{drink.attributes.Onoma}</span>
+                                                <span class="text-primary">{drink.attributes.Price} €</span>
+                                            </h5>
+                                            <small class="fst-italic">{drink.attributes.Perigrafi}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}         
+                        </div>
+                        <div class="row g-4">
+                            <h4 class="text-primary" style="padding: 30px;">Αναψυκτικά</h4>
+                            {drinks.filter( (i) => { return i.attributes.Type === 'beverages'}).map((drink) =>(
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" alt="" style="width: 80px;">
